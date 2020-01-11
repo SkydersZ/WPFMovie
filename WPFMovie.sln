@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFMovie", "WPFMovie\WPFMovie.csproj", "{90E50E4F-3C95-45C4-8456-84DCA7BE913B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFMovie", "WPFMovie\WPFMovie.csproj", "{90E50E4F-3C95-45C4-8456-84DCA7BE913B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieMVVM", "MovieMVVM\MovieMVVM.csproj", "{19015B32-6435-4C7F-9E63-0F616B625543}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieHelpers", "MovieHelpers\MovieHelpers.csproj", "{5292CB8B-381E-43F8-9590-343448AE6B04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{90E50E4F-3C95-45C4-8456-84DCA7BE913B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90E50E4F-3C95-45C4-8456-84DCA7BE913B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90E50E4F-3C95-45C4-8456-84DCA7BE913B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19015B32-6435-4C7F-9E63-0F616B625543}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19015B32-6435-4C7F-9E63-0F616B625543}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19015B32-6435-4C7F-9E63-0F616B625543}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19015B32-6435-4C7F-9E63-0F616B625543}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5292CB8B-381E-43F8-9590-343448AE6B04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5292CB8B-381E-43F8-9590-343448AE6B04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5292CB8B-381E-43F8-9590-343448AE6B04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5292CB8B-381E-43F8-9590-343448AE6B04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
