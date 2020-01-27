@@ -14,7 +14,7 @@ namespace WPFMovie
         {
             DataTemplate template = base.SelectTemplate(item, container);
             
-            if(item is ViewModelAllMovies)
+            if(item is ViewModelMovie)
             {
                 template = Application.Current.Resources["ViewModelAllMoviesTemplate"] as DataTemplate;
             }

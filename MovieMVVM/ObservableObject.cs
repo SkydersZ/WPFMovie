@@ -16,7 +16,6 @@ namespace MovieMVVM
 
         #region Méthodes
 
-        #endregion
 
         /// <summary>
         /// Déclenche l'événement <see cref="PropertyChanging"/>.
@@ -53,6 +52,7 @@ namespace MovieMVVM
             }
         }
 
+        #endregion
         /// <summary>
         ///     Modifie la valeur d'un attribut et déclenche les événements <see cref="PropertyChanging"/> et <see cref="PropertyChanged"/>.
         /// </summary>

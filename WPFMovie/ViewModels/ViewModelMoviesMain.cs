@@ -10,13 +10,13 @@ namespace WPFMovie.ViewModels
     public class ViewModelMoviesMain : ObservableObject
     {
         #region Champs
-        private ViewModelAllMovies _ViewModelAllMovies;
+        private ViewModelMovie _ViewModelAllMovies;
         private ViewModelMyMovies _ViewModelMyMovies;
         private ObservableCollection<ObservableObject> _ViewsModels;
         #endregion
 
         #region Propriétés
-        public ViewModelAllMovies ViewModelAllMovies
+        public ViewModelMovie ViewModelAllMovies
         {
             get => this._ViewModelAllMovies;
             private set => this.SetProperty(nameof(this.ViewModelAllMovies), ref this._ViewModelAllMovies, value);
@@ -39,7 +39,7 @@ namespace WPFMovie.ViewModels
         public ViewModelMoviesMain()
         {
             this.ViewModels = new ObservableCollection<ObservableObject>();
-            this.ViewModelAllMovies = new ViewModelAllMovies();
+            this.ViewModelAllMovies = new ViewModelMovie();
             this.ViewModelMyMovies = new ViewModelMyMovies();
 
             this.ViewModels.Add(ViewModelAllMovies);

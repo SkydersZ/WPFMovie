@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using MovieMVVM.Interfaces;
+using MovieMVVM.Models.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -18,7 +19,9 @@ namespace WPFMovie
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            ServiceCollection ServiceProvider = new ServiceCollection();
+            ServiceCollection serviceCollection = new ServiceCollection();
+
+            serviceCollection.AddSingleton<IDataContext, BankManagerContext>();
 
             //ServiceProvider.AddScoped<IOMDbManipulation, OMDbService>();
         }

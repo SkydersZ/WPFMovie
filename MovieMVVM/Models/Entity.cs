@@ -16,9 +16,6 @@ namespace MovieMVVM.Models
             get => this._Identifier; 
             set => this.SetProperty(nameof(this.Identifier), ref this._Identifier, value);
         }
-        public abstract void BeginEdit();
-        public abstract void EndEdit();
-        public abstract void CancelEdit();
         #endregion
     }
 }
