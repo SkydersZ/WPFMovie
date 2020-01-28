@@ -25,13 +25,6 @@ namespace MovieMVVM.Models.Interfaces
         void Save();
 
         /// <summary>
-        ///     Créer un élément du type spécifié et l'ajoute au contexte de données.
-        /// </summary>
-        /// <typeparam name="T">Type de l'élément à créer.</typeparam>
-        /// <returns>Retourne un nouvel élément du type spécifié.</returns>
-        T CreateItem<T>() where T : IObservableObject;
-
-        /// <summary>
         ///     Obtient la collection des éléments du type spécifié.
         /// </summary>
         /// <typeparam name="T">Type de l'élément de la collection.</typeparam>

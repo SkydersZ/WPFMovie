@@ -1,6 +1,5 @@
 ﻿using MovieMVVM.Interfaces;
 using MovieMVVM.Models.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
@@ -25,11 +24,6 @@ namespace MovieMVVM.ViewModels
         private T _SelectedItem;
 
         /// <summary>
-        /// Commande ajoutant un film
-        /// </summary>
-        private readonly RelayCommand _AddCommand;
-
-        /// <summary>
         /// Commande supprimant un film
         /// </summary>
         private readonly RelayCommand _DeleteCommand;
@@ -50,8 +44,6 @@ namespace MovieMVVM.ViewModels
             set => this.SetProperty(nameof(this.SelectedItem), ref this._SelectedItem, value);
         }
 
-        public virtual RelayCommand AddCommand => this._AddCommand;
-
         public virtual RelayCommand DeleteCommand => this._DeleteCommand;
 
         #endregion
@@ -61,7 +53,6 @@ namespace MovieMVVM.ViewModels
         public ViewModelList(M dataContext)
             : base(dataContext)
         {
-            this._AddCommand = new RelayCommand(this.Add, this.CanAdd);
             this._DeleteCommand = new RelayCommand(this.Delete, this.CanDelete);
         }
 
@@ -76,25 +67,6 @@ namespace MovieMVVM.ViewModels
         }
 
         #region AddCommand
-
-
-        /// <summary>
-        /// Méthode d'exécution de la commande <see cref="AddCommand"/>
-        /// </summary>
-        /// <param name="parameter"></param>
-        protected virtual void Add(object parameter)
-        {
-            T itemToAdd = this.DataContext.CreateItem<T>();
-            this.ItemsSource.Insert(0, itemToAdd);
-            this.SelectedItem = itemToAdd;
-        }
-
-        /// <summary>
-        /// Méthode qui vérifie si la commande <see cref="CanAdd"/> peut être exécutée
-        /// </summary>
-        /// <param name="parameter"></param>
-        /// <returns></returns>
-        protected virtual bool CanAdd(object parameter) => true;
 
         /// <summary>
         /// Méthode d'exécution de la commande <see cref="DeleteCommand"/>

@@ -19,11 +19,12 @@ namespace WPFMovie
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
+            // Création d'une collection de services.
             ServiceCollection serviceCollection = new ServiceCollection();
 
-            serviceCollection.AddSingleton<IDataContext, BankManagerContext>();
+            // Création du contexte de l'application
 
-            //ServiceProvider.AddScoped<IOMDbManipulation, OMDbService>();
+            
         }
     }
 }

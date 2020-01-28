@@ -7,7 +7,7 @@ using MovieMVVM.Models;
 namespace WPFMovieManager.Models.DTO
 {
     /// <summary>
-    /// Classe conmportant les propriétés d'un film OMDb
+    /// Classe conmportant les propriétés d'un film récupéré depuis l'API OMDb.
     /// </summary>
     public class OMDbMovieObject : Entity
     {
@@ -104,6 +104,11 @@ namespace WPFMovieManager.Models.DTO
         {
             get => this.imdbID;
             set => this.SetProperty(nameof(this.Type), () => this.Type, (v) => this.Type = v, value);
+        }
+        public string Production
+        {
+            get => this.Production;
+            set => this.SetProperty(nameof(this.Production), () => this.Production, (v) => this.Production = v, value);
         }
         public string Response 
         {

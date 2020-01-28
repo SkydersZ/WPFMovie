@@ -13,7 +13,7 @@ namespace WPFMovie.ViewModels
     {
         #region Propriétés
 
-        public string Title => "Films";
+        public string Title => "Tous les Films";
 
         #endregion
 
@@ -26,13 +26,6 @@ namespace WPFMovie.ViewModels
 
         #region Méthodes
         
-        protected override void Add(object parameter)
-        {
-            base.Add(parameter);
-
-            this.SelectedItem.Identifier = this.DataContext.GetItems<Movie>().Max(s => s.Identifier) + 1;
-        }
-
         #endregion
     }
 }

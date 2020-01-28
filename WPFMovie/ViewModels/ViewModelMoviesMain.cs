@@ -1,49 +1,48 @@
-﻿using MovieMVVM;
+﻿
+using Microsoft.Extensions.DependencyInjection;
+using MovieMVVM.Interfaces;
+using MovieMVVM.Models.Interfaces;
+using MovieMVVM.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
+using WPFMovieManager.ViewModels.Abstract;
 
 namespace WPFMovie.ViewModels
 {
-    public class ViewModelMoviesMain : ObservableObject
+    public class ViewModelMoviesMain : ViewModelList<IObservableObject, IDataContext>, IViewModelMain
     {
         #region Champs
-        private ViewModelMovie _ViewModelAllMovies;
-        private ViewModelMyMovies _ViewModelMyMovies;
-        private ObservableCollection<ObservableObject> _ViewsModels;
+
+        private readonly IServiceProvider _ServiceProvider;
+
+        private IViewModelMovie _ViewModelMovie;
+
+        private IViewModelMyMovies _ViewModelMyMovies;
+
         #endregion
 
         #region Propriétés
-        public ViewModelMovie ViewModelAllMovies
+        public IViewModelMovie ViewModelMovie
         {
-            get => this._ViewModelAllMovies;
-            private set => this.SetProperty(nameof(this.ViewModelAllMovies), ref this._ViewModelAllMovies, value);
+            get => this._ViewModelMovie;
+            private set => this.SetProperty(nameof(this.ViewModelMovie), ref this._ViewModelMovie, value);
         }
 
-        public ViewModelMyMovies ViewModelMyMovies
+        public IViewModelMyMovies ViewModelMyMovies
         {
             get => this._ViewModelMyMovies;
             private set => this.SetProperty(nameof(this.ViewModelMyMovies), ref this._ViewModelMyMovies, value);
         }
 
-        public ObservableCollection<ObservableObject> ViewModels
-        {
-            get => this._ViewsModels;
-            private set => this.SetProperty(nameof(this.ViewModels), ref this._ViewsModels, value);
-        }
         #endregion
 
         #region Constructeur
-        public ViewModelMoviesMain()
+        public ViewModelMoviesMain(IServiceProvider serviceProvider) 
+            : base(serviceProvider.GetService<IDataContext>())
         {
-            this.ViewModels = new ObservableCollection<ObservableObject>();
-            this.ViewModelAllMovies = new ViewModelMovie();
-            this.ViewModelMyMovies = new ViewModelMyMovies();
+            this._ServiceProvider = serviceProvider;
 
-            this.ViewModels.Add(ViewModelAllMovies);
-            this.ViewModels.Add(ViewModelMyMovies);
+            this._ViewModelMovie = this._ServiceProvider.GetService<IViewModelMovie>();
+            this._ViewModelMyMovies = this._ServiceProvider.GetService<IViewModelMyMovies>();
         }
         #endregion
     }

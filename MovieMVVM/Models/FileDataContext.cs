@@ -39,8 +39,6 @@ namespace MovieMVVM.Models
             File.WriteAllText(this.FilePath, JsonConvert.SerializeObject(this));
         }
 
-        public abstract T CreateItem<T>() where T : IObservableObject;
-
         public abstract ObservableCollection<T> GetItems<T>() where T : IObservableObject;
 
         public static T Load<T>(string filePath, T defaultContext) where T :  FileDataContext

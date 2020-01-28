@@ -10,9 +10,9 @@ namespace WPFMovieManager.Models
     {
         #region Propriétés
 
-        public ObservableCollection<OMDbMovieObject> _AllMovies {
-            get => this._AllMovies;
-            private set => this.SetProperty(nameof(_AllMovies), () => this._AllMovies, (v) => this._AllMovies = v, value); 
+        public OMDbMovieObject Movies {
+            get => this.Movies;
+            private set => this.SetProperty(nameof(Movies), () => this.Movies, (v) => this.Movies = v, value); 
         }
 
         #endregion
@@ -21,7 +21,7 @@ namespace WPFMovieManager.Models
 
         public Movie()
         {
-            this._AllMovies = new ObservableCollection<OMDbMovieObject>(); 
+            this.Movies = new Movie(); 
         }
         #endregion
     }

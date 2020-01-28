@@ -1,32 +1,32 @@
 ﻿using MovieHelpers;
+using MovieMVVM.Interfaces;
 using Newtonsoft.Json;
 using System;
 using System.Collections.ObjectModel;
 using System.Net;
+using WPFMovieManager.Models.DTO;
 
 namespace WPFMovie.Services
 {
     public class OMDbService : IOMDbManipulation<OMDbMovieObject>
     {
-        public T SearchMovieById<T>(int Id) where T : OMDbMovieObject
+        public ObservableCollection<OMDbMovieObject> SearchMovieByName(string Name)
         {
-            string URL = $"{Keys.OMDIdUrl}{Id}{Keys.OMDbKeyParameter}{Keys.ApiKey}";
+            string URL = $"{Keys.OMDIdUrl}{Keys.OMDSearchUrl}{Keys.OMDbKeyParameter}{Keys.ApiKey}";
             using (WebClient wc = new WebClient())
             {
                 var json = wc.DownloadString(URL);
-                OMDbMovieObject obj = JsonConvert.DeserializeObject<OMDbMovieObject>(json);
-                if (obj.Response == "True")
+                ObservableCollection<OMDbMovieObject> obj = JsonConvert.DeserializeObject<ObservableCollection<OMDbMovieObject>>(json);
+
+                if (obj != null)
                 {
-                    return (T)obj;
+                    return obj;
                 }
-                return null;
+                else
+                {
+                    return null;
+                }
             }
-        }
-        
-        //TODO: Réalise le 
-        public ObservableCollection<T> SearchMovieByName<T>(string Name) where T : OMDbMovieObject
-        {
-            throw new NotImplementedException();
         }
     }
 }

@@ -10,11 +10,6 @@ namespace WPFMovieManager.ViewModels.Abstract
         #region Propriétés
        
         /// <summary>
-        /// Obtient la commande pour rajouter un film
-        /// </summary>
-        RelayCommand AddCommand { get; }
-        
-        /// <summary>
         /// Obtient la commande pour supprimer un film
         /// </summary>
         RelayCommand DeleteCommand { get; }
