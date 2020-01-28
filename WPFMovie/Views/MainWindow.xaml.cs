@@ -23,7 +23,7 @@ namespace WPFMovie
     {
         public MainWindow()
         {
-            InitializeComponent();
+           this.InitializeComponent();
         }
     }
 }

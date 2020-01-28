@@ -4,11 +4,12 @@ using MovieMVVM.Interfaces;
 using MovieMVVM.Models.Interfaces;
 using MovieMVVM.ViewModels;
 using System;
+using System.Collections.ObjectModel;
 using WPFMovieManager.ViewModels.Abstract;
 
 namespace WPFMovie.ViewModels
 {
-    public class ViewModelMoviesMain : ViewModelList<IObservableObject, IDataContext>, IViewModelMain
+    public class ViewModelMain : ViewModelList<IObservableObject, IDataContext>, IViewModelMain
     {
         #region Champs
 
@@ -36,14 +37,27 @@ namespace WPFMovie.ViewModels
         #endregion
 
         #region Constructeur
-        public ViewModelMoviesMain(IServiceProvider serviceProvider) 
+        public ViewModelMain(IServiceProvider serviceProvider) 
             : base(serviceProvider.GetService<IDataContext>())
         {
             this._ServiceProvider = serviceProvider;
 
             this._ViewModelMovie = this._ServiceProvider.GetService<IViewModelMovie>();
             this._ViewModelMyMovies = this._ServiceProvider.GetService<IViewModelMyMovies>();
+
+            this.LoadData();
         }
+
+        #endregion
+
+        #region Méthodes
+
+        public override void LoadData()
+        {
+            this.ItemsSource = new ObservableCollection<IObservableObject>(new IObservableObject[] { this._ViewModelMovie });
+        }
+
+
         #endregion
     }
 }

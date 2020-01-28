@@ -3,7 +3,7 @@
                     xmlns:viewmodels="clr-namespace:WPFMovie.ViewModels"
                     xmlns:views="clr-namespace:WPFMovie.Views">
     
-    <DataTemplate x:Key="ViewModelAllMoviesTemplate" DataType="{x:Type viewmodels:ViewModelAllMovies}">
+    <DataTemplate x:Key="ViewModelMovieTemplate" DataType="{x:Type viewmodels:ViewModelMovie}">
         <views:ViewAllMovies/>
     </DataTemplate>
 

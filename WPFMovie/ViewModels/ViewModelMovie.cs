@@ -6,10 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using WPFMovieManager.Models;
+using WPFMovieManager.ViewModels.Abstract;
 
 namespace WPFMovie.ViewModels
 {
-    public class ViewModelMovie : ViewModelList<Movie, IDataContext>
+    public class ViewModelMovie : ViewModelList<Movie, IDataContext>, IViewModelMovie
     {
         #region Propriétés
 

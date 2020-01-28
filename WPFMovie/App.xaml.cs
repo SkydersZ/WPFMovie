@@ -9,6 +9,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using WPFMovie.Services;
+using WPFMovie.ViewModels;
+using WPFMovieManager.ViewModels.Abstract;
 
 namespace WPFMovie
 {
@@ -21,10 +23,18 @@ namespace WPFMovie
         {
             // Création d'une collection de services.
             ServiceCollection serviceCollection = new ServiceCollection();
+            
+            //TODO: Appeler l'API.
 
             // Création du contexte de l'application
+            serviceCollection.AddScoped<IViewModelMain, ViewModelMain>(sp => new ViewModelMain(sp));
+            serviceCollection.AddScoped<IViewModelMovie, ViewModelMovie>(sp => new ViewModelMovie(sp.GetService<IDataContext>()));
 
-            
+            ServiceProvider serviceProvider = serviceCollection.BuildServiceProvider();
+
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.DataContext = serviceProvider.GetService<ViewModelMain>();
+            mainWindow.Show();
         }
     }
 }

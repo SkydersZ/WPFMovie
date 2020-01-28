@@ -5,6 +5,6 @@ using System.Text;
 
 namespace WPFMovieManager.ViewModels.Abstract
 {
-    public class IViewModelMyMovies : ContentView
+    public class IViewModelMyMovies
     {}
 }

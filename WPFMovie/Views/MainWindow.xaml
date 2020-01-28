@@ -10,7 +10,7 @@
         mc:Ignorable="d"
         Title="Films" Height="450" Width="800">
     <mahapps:MetroWindow.DataContext>
-        <viewmodels:ViewModelMoviesMain/>
+        <viewmodels:ViewModelMain/>
     </mahapps:MetroWindow.DataContext>
     <TabControl ItemsSource="{Binding ViewModels}">
         <TabControl.ContentTemplateSelector>
