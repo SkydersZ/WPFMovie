@@ -34,6 +34,7 @@ namespace WPFMovie
             // Création du vue-modèle principal.
             serviceCollection.AddScoped<IViewModelMain, ViewModelMain>(sp => new ViewModelMain(sp));
             serviceCollection.AddScoped<IViewModelMovies, ViewModelMovies>(sp => new ViewModelMovies(sp));
+            serviceCollection.AddScoped<IViewModelMyMovies, ViewModelMyMovies>(sp => new ViewModelMyMovies(sp));
 
             ServiceProvider serviceProvider = serviceCollection.BuildServiceProvider();
 

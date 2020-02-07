@@ -42,9 +42,8 @@ namespace WPFMovie.ViewModels
         {
             this._ServiceProvider = serviceProvider;
             this._ViewModelMovies = this._ServiceProvider.GetService<IViewModelMovies>();
+            this._ViewModelMyMovies = this._ServiceProvider.GetService<IViewModelMyMovies>();
             //TODO: Réaliser l'interface du ViewModelMyMovies
-
-           // this._ViewModelMyMovies = this._ServiceProvider.GetService<IViewModelMyMovies>();
 
             this.LoadData();
         }
@@ -55,7 +54,7 @@ namespace WPFMovie.ViewModels
 
         public override void LoadData()
         {
-            this.ItemsSource = new ObservableCollection<IObservableObject>(new IObservableObject[] { this._ViewModelMovies });
+            this.ItemsSource = new ObservableCollection<IObservableObject>(new IObservableObject[] { this._ViewModelMovies, this._ViewModelMyMovies });
             this.SelectedItem = this._ViewModelMovies;
         }
 
