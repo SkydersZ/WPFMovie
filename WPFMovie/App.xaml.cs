@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using WPFMovie.Services;
 using WPFMovie.ViewModels;
+using WPFMovie.Views;
 using WPFMovieManager.Models;
 using WPFMovieManager.ViewModels.Abstract;
 

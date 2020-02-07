@@ -16,9 +16,9 @@ namespace WPFMovie.Views
     /// <summary>
     /// Logique d'interaction pour ViewMovies.xaml
     /// </summary>
-    public partial class ViewMovies : UserControl
+    public partial class MoviesView : UserControl
     {
-        public ViewMovies()
+        public MoviesView()
         {
             InitializeComponent();
         }

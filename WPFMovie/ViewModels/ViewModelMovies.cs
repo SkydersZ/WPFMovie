@@ -23,6 +23,8 @@ namespace WPFMovie.ViewModels
         #region Propriétés
         public string Title => "Tous les Films";
 
+        public string DataContent => "Voici la page des films disponibles";
+
         #endregion
 
         #region Constructeur

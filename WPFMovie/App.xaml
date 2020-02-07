@@ -18,9 +18,6 @@
                 <!--Resources-->
                 <ResourceDictionary Source="Resources/DataTemplates.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-            <!-- DataTemplate x:Key="ViewModelMovieTemplate"  DataType="{x:Type viewmodels:ViewModelMovies}"-->
-                <!-- TextBlock Text="{Binding Data}" Background="Green" /-->
-            <!-- /DataTemplate -->
         </ResourceDictionary>
     </Application.Resources>
 </Application>

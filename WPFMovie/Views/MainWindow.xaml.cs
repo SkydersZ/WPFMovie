@@ -1,6 +1,9 @@
-﻿using System;
+﻿using MahApps.Metro.Controls;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -14,13 +17,13 @@ using System.Windows.Shapes;
 namespace WPFMovie.Views
 {
     /// <summary>
-    /// Logique d'interaction pour ViewMyMovies.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class ViewMyMovies : UserControl
+    public partial class MainWindow : MetroWindow
     {
-        public ViewMyMovies()
+        public MainWindow()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }
