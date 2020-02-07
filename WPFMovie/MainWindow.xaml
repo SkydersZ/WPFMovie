@@ -1,4 +1,4 @@
-﻿<Controls:MetroWindow x:Class="WPFMovie.MainWindow"
+﻿<mahapps:MetroWindow x:Class="WPFMovie.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -9,17 +9,20 @@
         xmlns:mahapps="http://metro.mahapps.com/winfx/xaml/controls"
         mc:Ignorable="d"
         Title="Films" Height="450" Width="800">
-    <mahapps:MetroWindow.DataContext>
-        <viewmodels:ViewModelMain/>
-    </mahapps:MetroWindow.DataContext>
-    <TabControl ItemsSource="{Binding ViewModels}">
-        <TabControl.ContentTemplateSelector>
-            <local:ViewModelTemplateSelector/>
-        </TabControl.ContentTemplateSelector>
+    <Grid>
+        
+    <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+
+    <TabControl Grid.Row="1" ItemsSource="{Binding ItemSource}" SelectedItem="{Binding SelectedItem}">
         <TabControl.ItemTemplate>
             <DataTemplate>
                 <TextBlock Text="{Binding Title}"/>
             </DataTemplate>
         </TabControl.ItemTemplate>
     </TabControl>
-</Controls:MetroWindow>
+    </Grid>
+
+</mahapps:MetroWindow>

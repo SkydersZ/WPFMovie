@@ -15,17 +15,17 @@ namespace WPFMovie.ViewModels
 
         private readonly IServiceProvider _ServiceProvider;
 
-        private IViewModelMovie _ViewModelMovie;
+        private IViewModelMovies _ViewModelMovies;
 
         private IViewModelMyMovies _ViewModelMyMovies;
 
         #endregion
 
         #region Propriétés
-        public IViewModelMovie ViewModelMovie
+        public IViewModelMovies ViewModelMovies
         {
-            get => this._ViewModelMovie;
-            private set => this.SetProperty(nameof(this.ViewModelMovie), ref this._ViewModelMovie, value);
+            get => this._ViewModelMovies;
+            private set => this.SetProperty(nameof(this.ViewModelMovies), ref this._ViewModelMovies, value);
         }
 
         public IViewModelMyMovies ViewModelMyMovies
@@ -41,9 +41,10 @@ namespace WPFMovie.ViewModels
             : base(serviceProvider.GetService<IDataContext>())
         {
             this._ServiceProvider = serviceProvider;
+            this._ViewModelMovies = this._ServiceProvider.GetService<IViewModelMovies>();
+            //TODO: Réaliser l'interface du ViewModelMyMovies
 
-            this._ViewModelMovie = this._ServiceProvider.GetService<IViewModelMovie>();
-            this._ViewModelMyMovies = this._ServiceProvider.GetService<IViewModelMyMovies>();
+           // this._ViewModelMyMovies = this._ServiceProvider.GetService<IViewModelMyMovies>();
 
             this.LoadData();
         }
@@ -54,7 +55,8 @@ namespace WPFMovie.ViewModels
 
         public override void LoadData()
         {
-            this.ItemsSource = new ObservableCollection<IObservableObject>(new IObservableObject[] { this._ViewModelMovie });
+            this.ItemsSource = new ObservableCollection<IObservableObject>(new IObservableObject[] { this._ViewModelMovies });
+            this.SelectedItem = this._ViewModelMovies;
         }
 
 

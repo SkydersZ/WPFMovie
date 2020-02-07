@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace WPFMovie.Views
 {
     /// <summary>
-    /// Logique d'interaction pour ViewAllMovies.xaml
+    /// Logique d'interaction pour ViewMovies.xaml
     /// </summary>
-    public partial class ViewAllMovies : UserControl
+    public partial class ViewMovies : UserControl
     {
-        public ViewAllMovies()
+        public ViewMovies()
         {
             InitializeComponent();
         }

@@ -1,36 +1,26 @@
 ﻿using MovieMVVM;
+using MovieMVVM.Models.Interfaces;
+using MovieMVVM.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using WPFMovieManager.Models;
+using WPFMovieManager.ViewModels.Abstract;
 
 namespace WPFMovie.ViewModels
 {
-    public class ViewModelMyMovies : ObservableObject
+    public class ViewModelMyMovies : ViewModelList<Movie, IDataContext>, IViewModelMovies
     {
-        #region Champs
-        private string _Title;
-        private string _Data;
-        #endregion
-
         #region Propriétés
-        public string Title {
-            get => this._Title;
-            set => this.SetProperty(nameof(this.Title), ref this._Title, value);
-        }
-
-        public string Data
-        {
-            get => this._Data;
-            set => this.SetProperty(nameof(this.Data), ref this._Data, value);
-        }
+        public string Title => "Vos films";
+        public string Data => "Tous les films que vous avez ajouté à votre collection";
         #endregion
 
         #region Constructeur
-        public ViewModelMyMovies()
+        public ViewModelMyMovies(IDataContext dataContext) : base(dataContext)
         {
-            this.Title = "Vos films";
-            this.Data = "Tous les films que vous avez ajouté à votre collection";   
+            LoadData();
         }
         #endregion
     }

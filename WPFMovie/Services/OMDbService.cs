@@ -12,7 +12,7 @@ namespace WPFMovie.Services
     {
         public ObservableCollection<OMDbMovieObject> SearchMovieByName(string Name)
         {
-            string URL = $"{Keys.OMDIdUrl}{Keys.OMDSearchUrl}{Keys.OMDbKeyParameter}{Keys.ApiKey}";
+            string URL = $"{Keys.OMDSearchUrl}{Keys.OMDbKeyParameter}{Keys.ApiKey}";
             using (WebClient wc = new WebClient())
             {
                 var json = wc.DownloadString(URL);

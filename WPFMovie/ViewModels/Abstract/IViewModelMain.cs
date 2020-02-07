@@ -14,5 +14,9 @@ namespace WPFMovieManager.ViewModels.Abstract
     /// </summary>
     public interface IViewModelMain : IViewModelList<IObservableObject, IDataContext>
     {
+        /// <summary>
+        /// Obitnet le vue-modèle de la page contenant tous les films.
+        /// </summary>
+        public IViewModelMovies ViewModelMovies { get; }
     }
 }

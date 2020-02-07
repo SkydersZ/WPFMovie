@@ -66,7 +66,7 @@ namespace MovieMVVM.ViewModels
             this.ItemsSource = new ObservableCollection<T>(this.DataContext.GetItems<T>());
         }
 
-        #region AddCommand
+        #region DeleteCommand
 
         /// <summary>
         /// Méthode d'exécution de la commande <see cref="DeleteCommand"/>

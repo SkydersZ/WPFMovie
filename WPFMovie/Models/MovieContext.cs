@@ -26,7 +26,7 @@ namespace WPFMovieManager.Models
         /// </summary>
         public ObservableCollection<Movie> Movies
         {
-            get => this.Movies;
+            get => this._Movies;
             private set => this.SetProperty(nameof(this.Movies), ref this._Movies, value);
         }
         #endregion
