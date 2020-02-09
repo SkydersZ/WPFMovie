@@ -6,11 +6,11 @@ using WPFMovieManager.Models.DTO;
 
 namespace WPFMovieManager.Models
 {
-    public class Movie : OMDbMovieObject
+    public class Movie : OMDbCompleteMovieObject
     {
         #region Propriétés
 
-        public OMDbMovieObject Movies {
+        public OMDbCompleteMovieObject Movies {
             get => this.Movies;
             private set => this.SetProperty(nameof(Movies), () => this.Movies, (v) => this.Movies = v, value); 
         }

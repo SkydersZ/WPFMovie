@@ -11,11 +11,23 @@
         Title="Films" Height="450" Width="800">
     <Grid>
         
-    <!--<Grid.RowDefinitions>
+    <Grid.RowDefinitions>
         <RowDefinition Height="*"/>
         <RowDefinition Height="Auto"/>
-    </Grid.RowDefinitions>-->
+    </Grid.RowDefinitions>
 
+     <!--"region Menu Principal-->
+        <Menu Grid.Row="0" Grid.ColumnSpan="2">
+            <MenuItem Header="Fichier">
+                <MenuItem Header="Sauvegarder"  Command="{Binding SaveCommand}"/>
+                <Separator/>
+                <MenuItem Header="Quitter"      Command="{Binding ExitCommand}"/>
+            </MenuItem>
+        </Menu>
+        
+        <!--#endregion -->
+
+     <!--#region Onglets-->
     <TabControl ItemsSource="{Binding ItemsSource}" SelectedItem="{Binding SelectedItem}">
         <TabControl.ItemTemplate>
             <DataTemplate>
@@ -23,6 +35,8 @@
             </DataTemplate>
         </TabControl.ItemTemplate>
     </TabControl>
+     <!--#endregion-->
+        
     </Grid>
 
 </mahapps:MetroWindow>

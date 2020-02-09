@@ -1,14 +1,12 @@
-﻿using MovieMVVM;
-using MovieMVVM.Models.Interfaces;
+﻿using MovieMVVM.Models.Interfaces;
 using MovieMVVM.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using WPFMovieManager.Models;
 using Microsoft.Extensions.DependencyInjection;
 using WPFMovieManager.ViewModels.Abstract;
-using System.ComponentModel;
+using WPFMovieManager.Models.DTO;
+using WPFMovieManager.Interfaces;
+using WPFMovie.Services;
 
 namespace WPFMovie.ViewModels
 {
@@ -17,13 +15,16 @@ namespace WPFMovie.ViewModels
         #region Champs
         private readonly IServiceProvider _ServiceProvider;
 
-        private readonly Movie movie;
+        //private readonly OMDbService _OMDbService;
+
         #endregion
 
         #region Propriétés
         public string Title => "Tous les Films";
-
+        
         public string DataContent => "Voici la page des films disponibles";
+
+        //public OMDbMovieSearchList MovieCollection { get; set; }
 
         #endregion
 
@@ -31,7 +32,7 @@ namespace WPFMovie.ViewModels
         public ViewModelMovies(IServiceProvider serviceProvider) : base(serviceProvider.GetService<IDataContext>())
         {
             this._ServiceProvider = serviceProvider;
-            this.movie = this._ServiceProvider.GetService<Movie>();
+
             this.LoadData();
         }
         #endregion

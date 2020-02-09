@@ -12,6 +12,7 @@ using System.Windows;
 using WPFMovie.Services;
 using WPFMovie.ViewModels;
 using WPFMovie.Views;
+using WPFMovieManager.Interfaces;
 using WPFMovieManager.Models;
 using WPFMovieManager.ViewModels.Abstract;
 
@@ -35,6 +36,7 @@ namespace WPFMovie
             serviceCollection.AddScoped<IViewModelMain, ViewModelMain>(sp => new ViewModelMain(sp));
             serviceCollection.AddScoped<IViewModelMovies, ViewModelMovies>(sp => new ViewModelMovies(sp));
             serviceCollection.AddScoped<IViewModelMyMovies, ViewModelMyMovies>(sp => new ViewModelMyMovies(sp));
+            serviceCollection.AddScoped<IViewModelHome, ViewModelHome>(sp => new ViewModelHome());
 
             ServiceProvider serviceProvider = serviceCollection.BuildServiceProvider();
 

@@ -19,6 +19,8 @@ namespace WPFMovie.ViewModels
 
         private IViewModelMyMovies _ViewModelMyMovies;
 
+        private IViewModelHome _ViewModelHome;
+
         #endregion
 
         #region Propriétés
@@ -34,6 +36,11 @@ namespace WPFMovie.ViewModels
             private set => this.SetProperty(nameof(this.ViewModelMyMovies), ref this._ViewModelMyMovies, value);
         }
 
+        public IViewModelHome ViewModelHome
+        {
+            get => this._ViewModelHome;
+            private set => this.SetProperty(nameof(this.ViewModelHome), ref this._ViewModelHome, value);
+        }
         #endregion
 
         #region Constructeur
@@ -43,7 +50,7 @@ namespace WPFMovie.ViewModels
             this._ServiceProvider = serviceProvider;
             this._ViewModelMovies = this._ServiceProvider.GetService<IViewModelMovies>();
             this._ViewModelMyMovies = this._ServiceProvider.GetService<IViewModelMyMovies>();
-            //TODO: Réaliser l'interface du ViewModelMyMovies
+            this._ViewModelHome = this._ServiceProvider.GetService<IViewModelHome>();
 
             this.LoadData();
         }
@@ -52,9 +59,12 @@ namespace WPFMovie.ViewModels
 
         #region Méthodes
 
+        /// <summary>
+        /// Chargement des ViewModels dans le ViewModelMain
+        /// </summary>
         public override void LoadData()
         {
-            this.ItemsSource = new ObservableCollection<IObservableObject>(new IObservableObject[] { this._ViewModelMovies, this._ViewModelMyMovies });
+            this.ItemsSource = new ObservableCollection<IObservableObject>(new IObservableObject[] { this._ViewModelHome, this._ViewModelMovies, this._ViewModelMyMovies });
             this.SelectedItem = this._ViewModelMovies;
         }
 
