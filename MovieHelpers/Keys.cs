@@ -3,7 +3,7 @@
 namespace MovieHelpers
 {
     /// <summary>
-    /// Classe comportant toutes les clés de données.
+    /// Classe comportant toutes les clés de données pour l'API OMDb.
     /// </summary>
     public static class Keys
     {

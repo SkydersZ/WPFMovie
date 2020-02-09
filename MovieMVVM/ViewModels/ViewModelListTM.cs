@@ -7,6 +7,11 @@ using WPFMovieManager.ViewModels.Abstract;
 
 namespace MovieMVVM.ViewModels
 {
+    /// <summary>
+    /// Classe permettant d'associer un ViewModel avec un contexte de données.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="M"></typeparam>
     public class ViewModelList<T, M> : ViewModelWithDataContext<M>, IViewModelList<T, M>
         where T : IObservableObject
         where M : IDataContext

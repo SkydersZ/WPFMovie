@@ -4,6 +4,11 @@ using System.Collections.ObjectModel;
 
 namespace WPFMovieManager.ViewModels.Abstract
 {
+    /// <summary>
+    /// Interface des ViewModels avec le contexte de données.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <typeparam name="M"></typeparam>
     public interface IViewModelList<T, M> : IViewModelList<M>
         where T : IObservableObject
         where M : IDataContext 

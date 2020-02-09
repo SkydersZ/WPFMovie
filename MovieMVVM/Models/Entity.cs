@@ -5,6 +5,10 @@ using System.Text;
 
 namespace MovieMVVM.Models
 {
+    /// <summary>
+    /// TODO: Cette classe n'est pas vraiment utilisé dans l'application, a intégrer avec l'objet "OMDbShortMovieObject"
+    /// Représente une entité avec un identifiant
+    /// </summary>
    public abstract class Entity : ObservableObject, IEntity
     {
         #region Champs

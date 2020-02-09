@@ -4,6 +4,10 @@ using MovieMVVM.ViewModels.Abstracts;
 
 namespace WPFMovieManager.ViewModels.Abstract
 {
+    /// <summary>
+    /// Interface des ViewModels avec le contexte de données.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface IViewModelList<T> : IViewModelWithDataContext<T>
         where T : IDataContext
     {

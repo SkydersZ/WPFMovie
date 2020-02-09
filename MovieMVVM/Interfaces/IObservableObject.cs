@@ -5,7 +5,10 @@ using System.Text;
 
 namespace MovieMVVM.Interfaces
 {
-   public interface IObservableObject : INotifyPropertyChanged, INotifyPropertyChanging
+    /// <summary>
+    /// Interface qui fournit un mécanisme de prévention de changement de valeur des propriétés.
+    /// </summary>
+    public interface IObservableObject : INotifyPropertyChanged, INotifyPropertyChanging
     {
     }
 }

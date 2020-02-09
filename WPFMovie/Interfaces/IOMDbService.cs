@@ -9,6 +9,7 @@ using WPFMovieManager.ViewModels.Abstract;
 
 namespace WPFMovieManager.Interfaces
 {
+    //Interface du OMDbService
    public interface IOMDbService
     {
         ObservableCollection<OMDbShortMovieObject> SearchMovieByName(string MovieName);

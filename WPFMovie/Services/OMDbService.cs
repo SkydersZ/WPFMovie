@@ -11,6 +11,9 @@ using WPFMovieManager.Models.DTO;
 
 namespace WPFMovie.Services
 {
+    /// <summary>
+    /// Service qui permet de manipuler l'API OMDb
+    /// </summary>
     public class OMDbService : IOMDbService
     {
 
@@ -34,6 +37,7 @@ namespace WPFMovie.Services
                 DataList = dataListFromJson.OMDbMovieObjectList;
             }
 
+            // On supprime l'ensemble des éléments qui ne sont pas des films de la liste.
             if (DataList != null)
             {
                 ObservableCollection<OMDbShortMovieObject> SortMovieList = new ObservableCollection<OMDbShortMovieObject>();

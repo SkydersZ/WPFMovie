@@ -3,6 +3,10 @@ using MovieMVVM.ViewModels.Abstracts;
 
 namespace MovieMVVM.ViewModels
 {
+    /// <summary>
+    /// ViewModel possédant un contexte de données.
+    /// </summary>
+    /// <typeparam name="M"></typeparam>
     public class ViewModelWithDataContext<M> : ObservableObject, IViewModelWithDataContext<M>
         where M : IDataContext
     {

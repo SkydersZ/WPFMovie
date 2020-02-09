@@ -7,6 +7,7 @@ using System.Net;
 namespace MovieMVVM
 {
     /// <summary>
+    /// TODO: Cette classe est devenue inutile, elle est à supprimer. Elle a été remplacé par IOMdbService.
     /// Classe contenant les actions réalisable avec l'API
     /// </summary>
     public abstract class OMDbManipulation : ObservableObject

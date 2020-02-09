@@ -8,6 +8,10 @@ using System.Text;
 
 namespace WPFMovieManager.Models
 {
+    /// <summary>
+    /// TODO: Revoir le contexte, pour l'instant il est inutile puisque le contexte du OMDbService est réalisé dans les ViewModels.
+    /// Classe qui contient l'ensemble du contexte de données de l'application
+    /// </summary>
     public class MovieContext : FileDataContext
     {
         #region Champs
@@ -35,6 +39,7 @@ namespace WPFMovieManager.Models
 
         public MovieContext(string apiRequestedUrl) : base(apiRequestedUrl)
         {
+            //TODO: Changer le chemin d'instanciation du OMDbService dans le Context (au lieu de le faire directement dans le ViewModelSearch).
             this._Movies = new ObservableCollection<Movie>();
         }
 

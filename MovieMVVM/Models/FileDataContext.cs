@@ -9,6 +9,10 @@ using System.Text;
 
 namespace MovieMVVM.Models
 {
+    /// <summary>
+    /// TODO: Pas utile pour l'instant car la sauvegarde n'est pas encore implémenté dans l'application. Soit à supprimer ou a modifier.
+    /// Classe abstraite pour la gestion d'un contexte de données avec sauvegarde dans un unique fichier au format json.
+    /// </summary>
     public abstract class FileDataContext : ObservableObject, IFileDataContext
     {
         #region Champs

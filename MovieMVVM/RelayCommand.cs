@@ -5,6 +5,9 @@ using System.Windows.Input;
 
 namespace MovieMVVM
 {
+    /// <summary>
+    /// Classe contenant les propriétés d'une commande.
+    /// </summary>
     public class RelayCommand : ICommand
     {
         #region Evènements

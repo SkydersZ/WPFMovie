@@ -7,7 +7,7 @@ using System.Text;
 namespace WPFMovieManager.Models.DTO
 {
     /// <summary>
-    /// Contient les propréiéts réduite issu de OMDb
+    /// Contient les propriétés réduite d'un film issu de OMDb
     /// </summary>
    public class OMDbShortMovieObject
     {

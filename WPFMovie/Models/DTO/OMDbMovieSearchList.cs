@@ -7,7 +7,7 @@ using System.Text;
 namespace WPFMovieManager.Models.DTO
 {
     /// <summary>
-    /// Contient les résultats de la recherche
+    /// Contient les résultats de recherche d'un film sur OMDb.
     /// </summary>
     public class OMDbMovieSearchList
     {

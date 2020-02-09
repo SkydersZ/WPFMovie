@@ -8,7 +8,8 @@ using Newtonsoft.Json;
 namespace WPFMovieManager.Models.DTO
 {
     /// <summary>
-    /// Classe comportant les propriétés d'un film récupéré depuis l'API OMDb.
+    /// TODO: Pour l'instant elle n'est pas utilisé, au profil de l'objet "OMDbSearchList" qui est plus léger.
+    /// Classe comportant toutes les propriétés d'un film récupéré depuis l'API OMDb.
     /// </summary>
     public class OMDbCompleteMovieObject : Entity
     {

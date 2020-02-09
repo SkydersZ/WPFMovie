@@ -3,6 +3,10 @@ using MovieMVVM.Models.Interfaces;
 
 namespace MovieMVVM.ViewModels.Abstracts
 {
+    /// <summary>
+    /// Interface du ViewModel possédant un contexte données.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface IViewModelWithDataContext<T> : IObservableObject 
         where T : IDataContext
     {
