@@ -4,6 +4,10 @@ Projet réalisé en C# (WPF) et avec Visual Studio.
 ## Somaire
 1. [Outils utilisés](#outils-utilisés)
 
+2. [Spécificités](#spécificités)
+
+3. [Contenu](#contenu)
+
 ---
 
 ### Outils utilisés
@@ -27,13 +31,13 @@ Voici les outils utilisés pour réaliser l'application
 - [Mahapps.Metro](https://github.com/MahApps/MahApps.Metro) : Librairie graphique `WPF`.
 - [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json) : Librairie de sérialisation au format `JSON`.
 - [Microsoft.Extensions.DependencyInjection](https://github.com/aspnet/Extensions) : Librairie d'injection de dépendance.
-- CoursWPF.MVVM : Librairie `MVVM` pour `WPF` développée lors du cours. Je l'ai réécrit à la main.
+- WPFMovieMVVM : Librairie `MVVM` pour `WPF` développée lors du cours. Je l'ai réécrit à la main.
 
 ---
 
-## Spécificités
+### Spécificités
 
-### Stucture du projet
+#### Structure du projet
 
 Pour réaliser le projet, je me suis appuyé sur les projets existants que nous avions pu faire lors des heures de cours.
 
@@ -45,7 +49,7 @@ J'ai donc repris pour ma solution, une structure comportant 3 projets distincts:
 
 * MovieManager contient la logique métier de la solution, elle fait appel aux deux autres projets pour pouvoir fonctionner.
 
-### Architecture
+#### Architecture
 L'architecture du projet repose sur les principes du modèles `MVVM`.
 Le modèle définit trois couches :
 - **Modèle** : Logique métier et données de l'application développée en langage `C#`
@@ -54,16 +58,16 @@ Le modèle définit trois couches :
 
 ---
 
-## Contenu
+### Contenu
 
-### Modèle de données de l'application
+#### Modèle de données de l'application
 Le modèle de données utilisé par l'application est le suivant :
 
 - **`Movie` : Représente un film (deprecated)**
 - **`OMDbCompleteMovieObject` : Représente un film issu de l'API OMDb**
 - **`OMDbShortMovieObject` : Représente un film issu de l'API OMdb, il possède moins de propriétés que le OMDbCompleteMovieObject**
 
-### Styles
+#### Styles
 L'application se base principalement sur les styles graphiques définis par `Mahapps`.
 Les styles de `Mahapps` sont fusionnés dans le fichier `.\App.xaml`.
 L'application définie également sont propre dictionnaire de styles ainsi qu'un dictionnaire de `DataTemplate` (cf. ci-dessous).
@@ -87,7 +91,7 @@ L'application définie également sont propre dictionnaire de styles ainsi qu'un
 </Application>
 ```
 
-### Fenêtre principale
+#### Fenêtre principale
 La fenêtre principale de l'application n'est pas instanciée en définissant la propriété `App.StartupUri` dans le fichier `.\App.xaml`.
 L'instanciation est réalisée dans l'événement `App.Startup` implémenté dans le fichier `.App.xaml.cs` :
 
@@ -120,7 +124,7 @@ public partial class App : Application
 }
 ```
 
-### Liaison entre les vues et les vues-modèles
+#### Liaison entre les vues et les vues-modèles
 Le choix du `DataTemplate` utilisé pour représenter chaque vue-modèle est réalisé dans le dictionnaire de ressource `.\Resources\DataTemplates.xaml` :
 ``` xml
     <DataTemplate DataType="{x:Type viewmodels:ViewModelMovies}">
@@ -138,18 +142,18 @@ Le choix du `DataTemplate` utilisé pour représenter chaque vue-modèle est ré
 
 Chaque vue-modèle est représenté par un contrôle utilisateur définis dans le dossier `.\Views\`.
 
-### Vue `MoviesView` (deprecated)
+#### Vue `MoviesView` (deprecated)
 
 La vue `MoviesView` était à base la vue qui devait contenir l'ensemble des films récupérés depuis l'API.
 Malheureusement il est n'est pas possible de récupérer l"ensemble des films sans un Nom ou un Id.
 Elle est donc délaissé au profit de SearchView.
 
-### Vue `MyMoviesView`
+#### Vue `MyMoviesView`
 
 Cette vue devait contenir l'ensemble des films qui aurait été ajouté en favoris depuis la page de recherche de film.
 Elle n'a pas été commencé mais existe tout de même dans la vue principale.
 
-### Vue `SearchView`
+#### Vue `SearchView`
 
 C'est la vue la plus complète elle contient la recherche des films depuis l'API et dispose d'une vue très simple (Juste une DataGrid).
 
@@ -276,7 +280,7 @@ Cette vue est reliée au `ViewModelSearch.cs` qui permet d'assurer toute la logi
 
  ---
 
-### DTO
+#### DTO
 
 Il existe trois objet **DTO** que j'ai réalisé, le premier est le `OMDbCompleteMovieObject`, il contient l'ensemble
 des propriétés d'un film récupéré depuis l'API OMDbMovie.
@@ -495,7 +499,7 @@ depuis l'API. Pour être plus précis, il contient une liste `OMDbShortMovieObje
 
 ```
 
-### Le projet `MovieHelpers`
+#### Le projet `MovieHelpers`
 
 Le projet `MovieHelpers` contient la classe `Keys.cs` qui contient de simples bouts de string permettant
 en les mettants bout à bout de créer une requête URL.
