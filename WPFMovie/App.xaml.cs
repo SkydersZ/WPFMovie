@@ -19,7 +19,8 @@ using WPFMovieManager.ViewModels.Abstract;
 namespace WPFMovie
 {
     /// <summary>
-    /// Interaction logic for App.xaml
+    /// Regroupement de l'ensemble des ViewModel avec leurs IViewModels et distribution du contexte de l'application
+    /// pour chacun des modèles.
     /// </summary>
     public partial class App : Application
     {
@@ -28,7 +29,7 @@ namespace WPFMovie
             // Création d'une collection de services.
             ServiceCollection serviceCollection = new ServiceCollection();
 
-            //TODO: Appeler l'API.
+            //TODO: Mettre en place un contexte d'application valable (Remplacer le contexte de test.api).
             // Création du contexte de l'application
             serviceCollection.AddSingleton<IDataContext, MovieContext>(sp => new MovieContext("http://test.api"));
 
@@ -36,7 +37,7 @@ namespace WPFMovie
             serviceCollection.AddScoped<IViewModelMain, ViewModelMain>(sp => new ViewModelMain(sp));
             serviceCollection.AddScoped<IViewModelMovies, ViewModelMovies>(sp => new ViewModelMovies(sp));
             serviceCollection.AddScoped<IViewModelMyMovies, ViewModelMyMovies>(sp => new ViewModelMyMovies(sp));
-            serviceCollection.AddScoped<IViewModelHome, ViewModelHome>(sp => new ViewModelHome());
+            serviceCollection.AddScoped<IViewModelSearch, ViewModelSearch>(sp => new ViewModelSearch());
 
             ServiceProvider serviceProvider = serviceCollection.BuildServiceProvider();
 

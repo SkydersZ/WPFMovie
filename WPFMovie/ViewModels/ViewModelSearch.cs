@@ -15,7 +15,7 @@ using System.ComponentModel;
 
 namespace WPFMovie.ViewModels
 {
-    public class ViewModelHome : ObservableObject, IViewModelHome
+    public class ViewModelSearch : ObservableObject, IViewModelSearch
     {
         #region Champs
 
@@ -25,7 +25,7 @@ namespace WPFMovie.ViewModels
         private readonly OMDbService _OMDbService;
 
         /// <summary>
-        /// Valeur du texte de la checkbox.
+        /// Valeur du texte de la Textbox du ViewSearch.
         /// </summary>
         private string _SearchValue;
 
@@ -43,6 +43,9 @@ namespace WPFMovie.ViewModels
         /// </summary>
         public ObservableCollection<OMDbShortMovieObject> MovieCollection { get; set; }
 
+        /// <summary>
+        /// Valeur du texte de la Textbox du ViewSearch 
+        /// </summary>
         public string SearchValue
         {
             get { return this._SearchValue; }
@@ -63,7 +66,7 @@ namespace WPFMovie.ViewModels
 
         #region Constructeur
 
-        public ViewModelHome()
+        public ViewModelSearch()
         {
             //TODO: Remplacer OMDbService par une injection de dépendance (via une interface).
             this._OMDbService = new OMDbService();

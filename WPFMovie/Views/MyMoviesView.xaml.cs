@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 namespace WPFMovie.Views
 {
     /// <summary>
-    /// Logique d'interaction pour ViewMyMovies.xaml
+    /// Vue listant tous les films ajoutés aux favoris.
     /// </summary>
     public partial class MyMoviesView : UserControl
     {

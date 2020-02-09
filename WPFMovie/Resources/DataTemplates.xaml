@@ -11,8 +11,8 @@
         <views:MyMoviesView/>
     </DataTemplate>
 
-    <DataTemplate DataType="{x:Type viewmodels:ViewModelHome}">
-        <views:HomeView/>
+    <DataTemplate DataType="{x:Type viewmodels:ViewModelSearch}">
+        <views:SearchView/>
     </DataTemplate>
     
 

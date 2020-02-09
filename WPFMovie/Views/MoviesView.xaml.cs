@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 namespace WPFMovie.Views
 {
     /// <summary>
-    /// Logique d'interaction pour ViewMovies.xaml
+    /// Vue listant tous les films issus de l'API
     /// </summary>
     public partial class MoviesView : UserControl
     {

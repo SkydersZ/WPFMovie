@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 namespace WPFMovie.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Vue principale
     /// </summary>
     public partial class MainWindow : MetroWindow
     {

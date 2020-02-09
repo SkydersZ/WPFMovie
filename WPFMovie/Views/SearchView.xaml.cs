@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace WPFMovie.Views
 {
     /// <summary>
-    /// Logique d'interaction pour HomeView.xaml
+    /// Vue listant et permettant la recherche de films.
     /// </summary>
-    public partial class HomeView : UserControl
+    public partial class SearchView : UserControl
     {
-        public HomeView()
+        public SearchView()
         {
             this.InitializeComponent();
         }

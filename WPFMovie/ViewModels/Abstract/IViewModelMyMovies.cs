@@ -7,6 +7,9 @@ using WPFMovieManager.Models;
 
 namespace WPFMovieManager.ViewModels.Abstract
 {
+    /// <summary>
+    /// Interface du ViewModelMyMovies
+    /// </summary>
     public interface IViewModelMyMovies : IViewModelList<Movie, IDataContext>
     {
     }

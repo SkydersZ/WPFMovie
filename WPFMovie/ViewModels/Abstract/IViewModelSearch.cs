@@ -8,7 +8,10 @@ using WPFMovieManager.Models;
 
 namespace WPFMovieManager.ViewModels.Abstract
 {
-    public interface IViewModelHome : IObservableObject
+    /// <summary>
+    /// Interface du ViewModelSearch
+    /// </summary>
+    public interface IViewModelSearch : IObservableObject
     {
     }
 }

@@ -8,6 +8,9 @@ using WPFMovieManager.Models;
 
 namespace WPFMovieManager.ViewModels.Abstract
 {
+    /// <summary>
+    /// Interface du ViewModelMovies
+    /// </summary>
     public interface IViewModelMovies : IViewModelList<Movie, IDataContext>
     { 
     }
